@@ -95,4 +95,4 @@ class IdentityNumberValidator
 }
 ```
 
-The collections con be iterated as an array or if you prefer, yo can call the method `getElements` the get the array.
+The collections can be iterated as an array or if you prefer, yo can call the method `getElements` the get the array.
