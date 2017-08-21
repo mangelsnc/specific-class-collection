@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/mangelsnc/specific-class-collection.svg?branch=master)](https://travis-ci.org/mangelsnc/specific-class-collection)
 # SpecificClassCollection
 
 ## Installation
