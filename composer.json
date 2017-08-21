@@ -1,0 +1,27 @@
+{
+    "name": "mangelsnc/specific-class-collection",
+    "description": "Abstract class to build Specific Type Collection classes",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miguel Ángel Sánchez Chordi",
+            "email": "mangel.snc@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SpecificClassCollection\\": "src/SpecificClassCollection/",
+            "Tests\\": "tests/"
+        }
+    },
+    "optimize-autoloader": true,
+    "config": {
+        "bin-dir": "bin"
+    },
+
+    "bin": ["bin/phpunit"]
+}
