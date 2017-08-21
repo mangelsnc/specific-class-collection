@@ -1,5 +1,15 @@
 # SpecificClassCollection
 
+## Installation
+
+Just execute:
+
+```
+composer require mangelsnc/specific-class-collection
+```
+
+## Description
+
 This abstract class allows you to create collections of a specific class.
 
 Have you ever seen something like this in Java?
