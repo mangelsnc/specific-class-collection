@@ -1,5 +1,15 @@
 # SpecificClassCollection
 
+## Installation
+
+Just execute:
+
+```
+composer require mangelsnc/specific-class-collection
+```
+
+## Description
+
 This abstract class allows you to create collections of a specific class.
 
 Have you ever seen something like this in Java?
@@ -50,27 +60,8 @@ an easy way to do it in PHP, so, we perform a validation of the type in the same
 This is not elegant, but moreover, it can make these validator not work if there's no item implementing the desired 
 interface in the array passed to the constructor.
 
-With this little helper, create a specific collection is easy as this:
 
-```php
-<?php
-
-namespace Solid\ApplicationService\ValidatorRules;
-
-use SpecificClassCollection\SpecificClassCollection;
-use Solid\ApplicationService\ValidatorRules\IdentityNumberValidatorRuleInterface;
-
-class IdentityNumberValidatorRuleCollection extends SpecificClassCollection
-{
-
-    protected function getValidClassName()
-    {
-        return IdentityNumberValidatorRuleInterface::class;
-    }
-}
-```
-
-And the old constructor can be refactored as this:
+With collections, the old constructor can be refactored as this:
 
 ```php
 <?php
@@ -95,4 +86,51 @@ class IdentityNumberValidator
 }
 ```
 
-The collections can be iterated as an array or if you prefer, yo can call the method `getElements` the get the array.
+Leaving a clean constructor and delegating the validation of the types to the correct place.
+
+**Note:** The collections can be iterated as an array or if you prefer, you can call the method `getElements` the get the array.
+
+### Create a collection class
+With this little helper, create a specific collection class is easy as this:
+
+```php
+<?php
+
+namespace Solid\ApplicationService\ValidatorRules;
+
+use SpecificClassCollection\SpecificClassCollection;
+use Solid\ApplicationService\ValidatorRules\IdentityNumberValidatorRuleInterface;
+
+class IdentityNumberValidatorRuleCollection extends SpecificClassCollection
+{
+
+    protected function getValidClassName()
+    {
+        return IdentityNumberValidatorRuleInterface::class;
+    }
+}
+```
+
+### Manipulate the collection
+
+
+Add elements to a collection:
+
+```php
+$collection = new IdentityNumberValidatorRuleCollection();
+$collection->add($rule);
+$collection->add($rule);
+
+```
+
+Get the number of elements inside the collection:
+
+```php
+$collection->count();
+```
+
+Reset the collection content:
+
+```php
+$collection->clear();
+```
