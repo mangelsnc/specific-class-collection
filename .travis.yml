@@ -1,0 +1,10 @@
+language: php
+php:
+  - '7.0'
+  - '7.1'
+
+script:
+  - bin/phpunit
+
+install:
+  - composer install
