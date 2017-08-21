@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/mangelsnc/specific-class-collection.svg?branch=dev)](https://travis-ci.org/mangelsnc/specific-class-collection)
+[![Build Status](https://travis-ci.org/mangelsnc/specific-class-collection.svg?branch=dev)](https://travis-ci.org/mangelsnc/specific-class-collection) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mangelsnc/specific-class-collection/badges/quality-score.png?b=dev)](https://scrutinizer-ci.com/g/mangelsnc/specific-class-collection/?branch=dev) [![Code Coverage](https://scrutinizer-ci.com/g/mangelsnc/specific-class-collection/badges/coverage.png?b=dev)](https://scrutinizer-ci.com/g/mangelsnc/specific-class-collection/?branch=dev)
+
 # SpecificClassCollection
 
 ## Installation
