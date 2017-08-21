@@ -3,14 +3,17 @@
 namespace SpecificClassCollection;
 
 use Countable;
+use Iterator;
 
-abstract class SpecificClassCollection implements Countable
+abstract class SpecificClassCollection implements Countable, Iterator
 {
     private $collection;
+    private $current;
 
     public function __construct()
     {
         $this->collection = [];
+        $this->current = 0;
     }
 
     public function count()
@@ -42,10 +45,36 @@ abstract class SpecificClassCollection implements Countable
     public function clear()
     {
         $this->collection = [];
+        $this->rewind();
     }
 
     public function getElements()
     {
         return $this->collection;
+    }
+
+    public function current()
+    {
+        return $this->collection[$this->current];
+    }
+
+    public function next()
+    {
+        ++$this->current;
+    }
+
+    public function key()
+    {
+        return $this->current;
+    }
+
+    public function valid()
+    {
+        return isset($this->collection[$this->current]);
+    }
+
+    public function rewind()
+    {
+        $this->current = 0;
     }
 }

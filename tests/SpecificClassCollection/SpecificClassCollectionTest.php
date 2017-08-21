@@ -77,4 +77,67 @@ class SpecificClassCollectionTest extends TestCase
 
         $this->assertTrue(is_array($testClass->getElements()));
     }
+
+    /**
+     * @test
+     */
+    public function itShouldStartAtInitialPosition()
+    {
+        $testClass = new DateTimeCollection();
+
+        $this->assertEquals(0, $testClass->key());
+    }
+
+    /**
+     * @test
+     */
+    public function itShouldIncreasePointerAsElementsAreInserted()
+    {
+        $testClass = new DateTimeCollection();
+
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+
+        $i = 0;
+        foreach ($testClass as $item) {
+            $this->assertEquals($i, $testClass->key());
+            $i++;
+        }
+    }
+
+    /**
+     * @test
+     */
+    public function itShouldResetPointer()
+    {
+        $testClass = new DateTimeCollection();
+
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+        $testClass->add(new \DateTime());
+
+        $i = 0;
+        foreach ($testClass as $item) {
+            $i++;
+        }
+
+        $this->assertEquals($i, $testClass->key());
+        $testClass->rewind();
+        $this->assertEquals(0, $testClass->key());
+    }
+
+    /**
+     * @test
+     */
+    public function itShouldDetectIfKeyIsValid()
+    {
+        $testClass = new DateTimeCollection();
+        $testClass->next();
+        $this->assertFalse($testClass->valid());
+    }
 }
