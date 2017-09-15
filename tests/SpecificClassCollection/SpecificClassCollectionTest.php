@@ -22,8 +22,19 @@ class SpecificClassCollectionTest extends TestCase
     public function itShouldAddOnlyValidClassObjects()
     {
         $testClass = new DateTimeCollection();
-
+        
         $this->assertTrue($testClass->add(new \DateTime()));
+    }
+
+    /**
+     * @test
+     */
+    public function itShouldWorksWithInterfaceImplementations()
+    {
+        $countableCollection = new CountableCollection();
+        $countableObject = new CountableImplementor();
+
+        $this->assertTrue($countableCollection->add($countableObject));
     }
 
     /**
