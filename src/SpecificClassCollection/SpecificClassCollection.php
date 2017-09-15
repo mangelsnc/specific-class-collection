@@ -57,7 +57,7 @@ abstract class SpecificClassCollection implements Countable, Iterator
     {
         $elementClass = get_class($element);
 
-        if ($this->getValidClassName() !== $elementClass) {
+        if ($this->getValidClassName() !== $elementClass  && ! is_subclass_of($element, $this->getValidClassName())) {
             throw new InvalidClassException($this->getValidClassName());
         }
 
