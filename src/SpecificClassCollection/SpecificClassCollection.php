@@ -33,7 +33,7 @@ abstract class SpecificClassCollection implements Countable, Iterator
     /**
      * Add an element to the collection
      *
-     * @param $element
+     * @param mixed $element
      * @return bool
      * @throws InvalidClassException
      */
@@ -49,7 +49,7 @@ abstract class SpecificClassCollection implements Countable, Iterator
      * Check if an element can be added to
      * the collection
      *
-     * @param $element
+     * @param mixed $element
      * @return bool
      * @throws InvalidClassException
      */
