@@ -80,7 +80,7 @@ class IdentityNumberValidator
     public function __construct(IdentityNumberValidatorRuleCollection $validators)
     {
         foreach ($validators as $validator) {
-            $this->validators[$validator->getClassName()] = $validator;
+            $this->validators[$validator->getValidClassName()] = $validator;
         }
     }
     
